@@ -45,3 +45,13 @@
   z-index: 2;
   max-width: 800px;
 }
+
+input[type="checkbox"]:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}

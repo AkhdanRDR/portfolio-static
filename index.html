@@ -10,7 +10,7 @@
   </head>
   <body class="bg-(--color-bg) text-(--color-text)">
     <nav
-      class="bg-(--color-accent) flex justify-between p-4 text-(--color-text) px-10 fixed top-0 left-0 w-full z-10"
+      class="bg-(--color-accent) flex justify-between p-4 text-(--color-text) px-10 fixed top-0 left-0 w-full z-10 transition duration-300 ease-in-out"
     >
       <h1>Akhdan</h1>
       <ul class="flex gap-10">
@@ -22,11 +22,15 @@
         <li>
           <button
             id="theme-toggle"
-            class="bg-(--color-bg) border border-(--color-accent) px-3 py-1 rounded transition duration-300 hover:bg-(--color-accent) hover:text-(--color-bg)"
+            class="relative w-14 h-7 flex items-center rounded-full border border-(--color-accent) bg-(--color-bg) transition duration-300 focus:outline-none"
             aria-label="Toggle dark and light theme"
             type="button"
           >
-            🌓
+            <!-- bulatan toggle -->
+            <span
+              id="theme-thumb"
+              class="h-5 w-5 bg-(--color-accent) rounded-full transform transition-transform duration-300 translate-x-1"
+            ></span>
           </button>
         </li>
       </ul>
@@ -107,10 +111,6 @@
         cursorChar: "|",
       });
 
-      particlesJS.load("particles-js", "assets/particles.json", function () {
-        console.log("callback - particles.js config loaded");
-      });
-
       // Theme toggle logic
       const themeToggle = document.getElementById("theme-toggle");
       const root = document.documentElement;
@@ -160,6 +160,33 @@
 
       // Initialize theme on load
       applyTheme(getCurrentTheme());
+
+      particlesJS.load("particles-js", "assets/particles.json", function () {
+        console.log("callback - particles.js config loaded");
+      });
+
+      const toggleBtn = document.getElementById("theme-toggle");
+      const thumb = document.getElementById("theme-thumb");
+      const sun = document.getElementById("theme-icon");
+      const moon = document.getElementById("theme-icon-dark");
+
+      let dark = false;
+
+      toggleBtn.addEventListener("click", () => {
+        dark = !dark;
+
+        if (dark) {
+          thumb.classList.add("translate-x-7");
+          sun.classList.add("opacity-0");
+          moon.classList.remove("opacity-0");
+          document.documentElement.classList.add("dark"); // kalau pakai dark mode Tailwind
+        } else {
+          thumb.classList.remove("translate-x-7");
+          sun.classList.remove("opacity-0");
+          moon.classList.add("opacity-0");
+          document.documentElement.classList.remove("dark");
+        }
+      });
     </script>
   </body>
 </html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Portfolio - Akhdan</title>
+  </head>
+  <body class="bg-(--color-bg) text-(--color-text)">
+    <nav
+      class="bg-(--color-accent) flex justify-between p-4 text-(--color-text) px-10 fixed top-0 left-0 w-full z-10"
+    >
+      <h1>Akhdan</h1>
+      <ul class="flex gap-10">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button
+            id="theme-toggle"
+            class="bg-(--color-bg) border border-(--color-accent) px-3 py-1 rounded transition duration-300 hover:bg-(--color-accent) hover:text-(--color-bg)"
+            aria-label="Toggle dark and light theme"
+            type="button"
+          >
+            🌓
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <section
+        id="home"
+        class="flex flex-col justify-center items-center h-screen"
+      >
+        <div id="particles-js"></div>
+        <div class="flex flex-col justify-center items-center h-full w-full">
+          <div id="typed-strings">
+            <p>Software Engineer</p>
+            <p>Frontend Developer</p>
+            <p>Backend Developer</p>
+          </div>
+          <h1 class="text-5xl font-bold text-center text-(--color-text)">
+            I'm a <span id="typed"></span>
+          </h1>
+          <p
+            class="text-2xl mt-4 text-(--color-text-secondary) text-center w-1/2"
+          >
+            I'm a passionate Web Developer specializing in creating elegant and
+            functional websites. I love turning ideas into reality through code.
+            With a strong foundation in HTML, CSS, and JavaScript, I'm dedicated
+            to delivering efficient and visually stunning web experiences.
+          </p>
+          <div class="section-content flex gap-4 mt-4">
+            <a
+              href="https://github.com/akhdan"
+              class="bg-(--color-accent) text-(--color-text) px-4 py-2 rounded-md hover:bg-(--color-accent-hover) transition duration-300 ease-in-out flex items-center gap-1.5"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
+                />
+              </svg>
+              Github</a
+            >
+            <a
+              href="https://www.linkedin.com/in/akhdan/"
+              class="border border-solid border-2 border-(--color-accent) text-(--color-text) px-4 py-2 rounded-md hover:bg-(--color-accent) transition duration-300 ease-in-out flex items-center gap-1.5"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93zM6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37z"
+                /></svg
+              >Linkedin</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script>
+      var typed = new Typed("#typed", {
+        stringsElement: "#typed-strings",
+        smartBackspace: true,
+        loop: true,
+        loopCount: Infinity,
+        typeSpeed: 70,
+        backSpeed: 70,
+        backDelay: 250,
+        startDelay: 250,
+        cursorChar: "|",
+      });
+
+      particlesJS.load("particles-js", "assets/particles.json", function () {
+        console.log("callback - particles.js config loaded");
+      });
+
+      // Theme toggle logic
+      const themeToggle = document.getElementById("theme-toggle");
+      const root = document.documentElement;
+      const darkTheme = {
+        "--color-bg": "#0b0f1a",
+        "--color-surface": "#111827",
+        "--color-text": "#f9fafb",
+        "--color-text-secondary": "#9ca3af",
+        "--color-accent": "#06D001",
+        "--color-accent-hover": "#059212",
+        "--color-border": "#1f2937",
+        "--color-success": "#22c55e",
+        "--color-warning": "#f59e0b",
+        "--color-error": "#ef4444",
+      };
+      const lightTheme = {
+        "--color-bg": "#f9fafb",
+        "--color-surface": "#ffffff",
+        "--color-text": "#1f2937",
+        "--color-text-secondary": "#6b7280",
+        "--color-accent": "#a7d8f0",
+        "--color-accent-hover": "#5ca9d6",
+        "--color-border": "#e5e7eb",
+        "--color-success": "#6ee7b7",
+        "--color-warning": "#fcd34d",
+        "--color-error": "#f87171",
+      };
+
+      function setTheme(theme) {
+        Object.entries(theme).forEach(([k, v]) => root.style.setProperty(k, v));
+      }
+
+      function getCurrentTheme() {
+        return localStorage.getItem("theme") || "dark";
+      }
+
+      function applyTheme(themeName) {
+        if (themeName === "dark") setTheme(darkTheme);
+        else setTheme(lightTheme);
+        localStorage.setItem("theme", themeName);
+      }
+
+      themeToggle.addEventListener("click", () => {
+        const newTheme = getCurrentTheme() === "dark" ? "light" : "dark";
+        applyTheme(newTheme);
+      });
+
+      // Initialize theme on load
+      applyTheme(getCurrentTheme());
+    </script>
+  </body>
+</html>
